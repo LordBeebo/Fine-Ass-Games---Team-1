@@ -1,0 +1,28 @@
+html {
+  font-size: 62.5%;
+  background-color: rgb(176, 241, 176);
+}
+nav {
+  background-color: green;
+  margin: none;
+  padding: 1rem 0.5rem;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  font-size: 5rem;
+  font-family: "Times New Roman";
+}
+div {
+  text-align: center;
+  font-size: 1.5rem;
+}
+#store {
+  text-align: center;
+  font-size: 1.5rem;
+}
+button {
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+}
