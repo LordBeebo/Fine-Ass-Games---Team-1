@@ -10,20 +10,20 @@ const factoryButton = document.getElementById("factory");
 
 //"Tiers" class allows for easy construction of new tiers
 class Tiers {
-    currentNum = 0
+  currentNum = 0;
 
-    constructor(baseCost, baseDPS){
-        this.baseCost = baseCost
-        this.baseDPS = baseDPS
-    }
+  constructor(baseCost, baseDPS) {
+    this.baseCost = baseCost;
+    this.baseDPS = baseDPS;
+  }
 
-    purchase() {
-        if (bankQty >= this.baseCost) {
-            bankQty -= this.baseCost;
-            cashFlow += this.baseDPS;
-            counterUpdate();
-        }
+  purchase() {
+    if (bankQty >= this.baseCost) {
+      bankQty -= this.baseCost;
+      cashFlow += this.baseDPS;
+      counterUpdate();
     }
+  }
 }
 
 //Create instances of "Tiers"
@@ -32,27 +32,26 @@ const factory = new Tiers(200, 10);
 
 //Generic counter updater
 function counterUpdate() {
-    counter.innerHTML = 
-    `<p> Money: \$${bankQty} </p>
-    <p> Dollars per second: \$${cashFlow}`  
+  counter.innerHTML = `<h3> MONEY: \$${bankQty} </h3>
+    <p> Dollars per second: \$${cashFlow}`;
 }
 
 //Main money clicker function
 function clicker() {
-    bankQty ++;
-    counterUpdate();
+  bankQty++;
+  counterUpdate();
 }
 
 //Action to be taken every turn (one second)
 function turn() {
-    bankQty += cashFlow;
-    counterUpdate()
+  bankQty += cashFlow;
+  counterUpdate();
 }
 
 //Assign functions to buttons
-mainButton.addEventListener('click', clicker);
-childButton.addEventListener('click', child.purchase.bind(child));
-factoryButton.addEventListener('click', factory.purchase.bind(factory));
+mainButton.addEventListener("click", clicker);
+childButton.addEventListener("click", child.purchase.bind(child));
+factoryButton.addEventListener("click", factory.purchase.bind(factory));
 
 //Start the 1Hz actions
 setInterval(turn, 1000);

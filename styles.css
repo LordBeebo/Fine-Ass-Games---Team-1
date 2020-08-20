@@ -7,12 +7,20 @@ nav {
   margin: none;
   padding: 1rem 0.5rem;
 }
-
+#clickarea {
+  background-image: url(/DOLLAR\SIGN.PNG);
+  background-size: 100%;
+}
 h1 {
   color: white;
   text-align: center;
   font-size: 5rem;
-  font-family: "Times New Roman";
+  font-style: italic;
+  font-family: "Old English Text MT";
+  text-shadow: 5px 5px 3px black;
+}
+h3 {
+  font-size: 2.5rem;
 }
 div {
   text-align: center;
@@ -25,4 +33,7 @@ div {
 button {
   padding: 0.5rem 1.5rem;
   cursor: pointer;
+}
+#saveload {
+  text-align: right;
 }
