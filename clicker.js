@@ -12,23 +12,32 @@ const factoryButton = document.getElementById("factory");
 class Tiers {
   currentNum = 0;
 
-  constructor(baseCost, baseDPS) {
+  constructor(name, baseCost, baseDPS) {
+    this.name = name;
     this.baseCost = baseCost;
     this.baseDPS = baseDPS;
   }
 
-  purchase() {
-    if (bankQty >= this.baseCost) {
-      bankQty -= this.baseCost;
+  costAdjust() {
+    return this.baseCost + (2 ** this.currentNum)
+  }
+
+  purchase(button) {
+    if (bankQty >= this.costAdjust()) {
+      bankQty -= this.costAdjust();
       cashFlow += this.baseDPS;
+      this.currentNum ++
+      console.log(button);
+      button.innerHTML = `<p>${this.name}</p> <p>Price: \$${this.costAdjust()} </p><p>Quantity: ${this.currentNum}</p>`
       counterUpdate();
+      console.log(this.costAdjust(), this.currentNum);
     }
   }
 }
 
 //Create instances of "Tiers"
-const child = new Tiers(50, 2);
-const factory = new Tiers(200, 10);
+const child = new Tiers('Small child', 50, 2);
+const factory = new Tiers('Factory', 200, 10);
 
 //Generic counter updater
 function counterUpdate() {
@@ -50,8 +59,8 @@ function turn() {
 
 //Assign functions to buttons
 mainButton.addEventListener("click", clicker);
-childButton.addEventListener("click", child.purchase.bind(child));
-factoryButton.addEventListener("click", factory.purchase.bind(factory));
+childButton.addEventListener("click", child.purchase.bind(child, childButton));
+factoryButton.addEventListener("click", factory.purchase.bind(factory, factoryButton));
 
 //Start the 1Hz actions
 setInterval(turn, 1000);
