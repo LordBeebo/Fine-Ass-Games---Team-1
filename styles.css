@@ -20,7 +20,7 @@ h1 {
   text-shadow: 5px 5px 3px black;
 }
 h3 {
-  font-size: 2.5rem;
+  font-size: 5rem;
 }
 div {
   text-align: center;
@@ -30,6 +30,17 @@ div {
   text-align: center;
   font-size: 1.5rem;
 }
+.column {
+  width: 5%rem;
+  columns: 2;
+}
+.tier1 {
+  margin-left: 60%;
+}
+.tier2 {
+  margin-right: 60%;
+}
+
 button {
   padding: 0.5rem 1.5rem;
   cursor: pointer;
