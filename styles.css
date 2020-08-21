@@ -46,5 +46,6 @@ button {
   cursor: pointer;
 }
 #saveload {
-  text-align: right;
+  float: right;
+  margin-bottom: 100%;
 }
