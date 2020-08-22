@@ -3,13 +3,8 @@ html {
   background-color: rgb(176, 241, 176);
 }
 nav {
-  background-color: green;
-  margin: none;
-  padding: 1rem 0.5rem;
-}
-#clickarea {
-  background-image: url(/DOLLAR\SIGN.PNG);
-  background-size: 100%;
+  background-image: url('Money.gif');
+  background-size: 20%;
 }
 h1 {
   color: white;
@@ -45,7 +40,4 @@ button {
   padding: 0.5rem 1.5rem;
   cursor: pointer;
 }
-#saveload {
-  float: right;
-  margin-bottom: 100%;
-}
+
