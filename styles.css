@@ -3,8 +3,9 @@ html {
   background-color: rgb(176, 241, 176);
 }
 nav {
-  background-image: url('Money.gif');
+  background-image: url("Money.gif");
   background-size: 20%;
+  padding: 2rem 0rem;
 }
 h1 {
   color: white;
@@ -40,4 +41,7 @@ button {
   padding: 0.5rem 1.5rem;
   cursor: pointer;
 }
-
+#saveload {
+  columns: none;
+  text-align: center;
+}
